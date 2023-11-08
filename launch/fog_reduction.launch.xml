@@ -5,7 +5,7 @@
 
     <node pkg="fog_reduction" exec="fog_reduction" name="fog_reduction" output="screen">
       <remap from="input" to="pointcloud_raw_ex"/>
-      <remap from="output" to="fog_reduction/pointcloud"/>
+      <remap from="output" to="fog_reduction/pointcloud_ex"/>
       <param name="intensity_threshold" value="5"/>
       <param name="density_threshold" value="120"/>
       <param name="density_radius" value="1.4"/>
@@ -13,4 +13,4 @@
     </node>
   </group>
 
-</launch>
+</launch> 

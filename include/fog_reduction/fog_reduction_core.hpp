@@ -19,6 +19,8 @@
 #include <tier4_perception_msgs/msg/detected_objects_with_feature.hpp>
 #include <tier4_autoware_utils/tier4_autoware_utils.hpp>
 
+#include <velodyne_pointcloud/pointcloudXYZIRADT.h>
+
 #include <array>
 #include <deque>
 #include <map>
@@ -42,6 +44,8 @@ class FogReduction : public rclcpp::Node
 
   private:
     void callback_sensor_cloud(sensor_msgs::msg::PointCloud2::ConstSharedPtr sensor_cloud_ptr);
+    // void filter_intensity(const sensor_msgs::msg::PointCloud2::ConstSharedPtr& input,
+    //                   sensor_msgs::msg::PointCloud2& output);
     rclcpp::Subscription<sensor_msgs::msg::PointCloud2>::SharedPtr sensor_cloud_sub_;
     rclcpp::Publisher<sensor_msgs::msg::PointCloud2>::SharedPtr sensor_cloud_pub_;
 
